@@ -41,7 +41,7 @@
   ]
 
  // 5.1 (b) Set the following provisioning parameters for Amazon EC2 if cloudProvider is 'Amazon'
- def amazonParameters = [
+  def amazonParameters = [
     'config': cloudProviderPluginConfiguration,
     'count': '1',
 	'group': 'security goes here',
@@ -62,18 +62,44 @@
   ]
   
   // 5.2 (a) Set the following configurations for Azure if cloudProvider is 'Azure'
-  // TODO: Add Azure parameters for CreateConfiguration procedure
-  def azureConfigurations = [:]
+  def azureConfigurations = [
+    'config_name': cloudProviderPluginConfiguration,
+    'debug_level': '8',
+    'desc': 'Enter your description here',
+    'userName': 'admin',
+    'password': 'admin',
+    'resource_pool': 'local',
+    'subscription_id': 'your-subscription-id',
+    'tenant_id': 'your-tenant-id',
+    'vm_userName': 'vm_admin',
+    'vm_password': 'vm_admin',
+];
   
   // 5.2 (b) Set the following provisioning parameters for Azure if cloudProvider is 'Azure'
- def azureParameters = [
+
+  def azureParameters = [
     'connection_config': cloudProviderPluginConfiguration,
-    'region': 'East US',
-    'resource_group_name': 'IIS_production1_servers',
-    'vm_admin_password': 'admin',
-    'vm_admin_user': 'admin',
-    'vm_name': 'Prod_IIS',
-  ]
+    'create_public_ip': '0',
+    'disable_password_auth': '0',
+    'image': 'image-id',
+    'instance_count': '1',
+    'is_user_image': '1',
+    'job_step_timeout': '',
+    'location': 'local',
+    'os_type': 'Windows',
+    'public_key': '',
+    'resource_group_name': 'local',
+    'resource_pool': '',
+    'resource_port': '',
+    'resource_workspace': 'default',
+    'resource_zone': '',
+    'result_location': '',
+    'vm_name': 'your_vm_name',
+    'storage_account': 'your_storage_account',
+    'storage_container': 'your_storage_container',
+    'subnet': '',
+    'vnet': '',
+];
 
   // 5.3 (a) Set the following configurations for OpenStack if cloudProvider is 'OpenStack'
   // TODO: Add open stack parameters for CreateConfiguration procedure
@@ -182,3 +208,4 @@ project projectName, {
 }
 // return the resource template created
 result
+
