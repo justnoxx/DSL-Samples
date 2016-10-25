@@ -22,7 +22,7 @@ def projectName = 'Default'
 // 3. Set the cloud provider to use for the resource template
 // Valid values are: Amazon, OpenStack, and Azure
 
-def cloudProvider = 'OpenStack';
+def cloudProvider = 'Azure';
 
 // 4. Whether the referenced plugin configurations 
 // should be created or replaced if they already exists.
@@ -139,7 +139,7 @@ def openStackParameters = [
 // 6. Set the configuration management tool to use for the resource template
 // Valid values are: Chef, and Puppet
 
-def configMgmtProvider = 'Puppet';
+def configMgmtProvider = 'Chef';
  
 // 7.1 (a) Set the following parameters if the selected configuration management tool is 'Chef'
 def chefConfigurations = [
